@@ -35,3 +35,16 @@ app.listen(port, () => {
  app.get ('/bacheca', (req, res) => {
     res.json(posts);
  });
+
+
+
+ //Importi Express
+
+//Importi il router delle rotte /posts
+
+//Configuri il middleware per JSON
+
+//Colleghi le rotte
+
+//Avvii il server
+
