@@ -8,8 +8,17 @@ const app = express();
 //definisco la porta
 const port= 3000;
 
+app.use(express.json());
+
 //inserisco il mildware per  i file statici
 app.use(express.static ('public'));
+
+
+//Importi il router delle rotte /posts
+const postRouters = require('./routers/postsRoutes')
+//utilizo il file routers per definire le ruote dei posts
+
+app.use('./posts', postRouters)
 
 //definisco la rotta entry point della nostra app
 app.get('/', (req, res)=> {
@@ -25,26 +34,19 @@ app.listen(port, () => {
 
 
 //fin qua ho fatto tutti i passaggi gia predeterminati ora crro
-// un array dove inserire una lista di almeno 5 post, per ognuno indicare titolo, contenuto, immagine e tags (tags è un array di stringhe)
+// un array dove inserire una lista di almeno 5 posts, per ognuno indicare titolo, contenuto, immagine e tags (tags è un array di stringhe)
 
 
 
 
 
-//bacheca che restituisce i post
- app.get ('/bacheca', (req, res) => {
-    res.json(posts);
- });
+//bacheca che restituisce i posts
+ //app.get ('/bacheca', (req, res) => {
+   // res.json(posts);
+// });
 
 
 
- //Importi Express
+ 
 
-//Importi il router delle rotte /posts
-
-//Configuri il middleware per JSON
-
-//Colleghi le rotte
-
-//Avvii il server
 

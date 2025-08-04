@@ -1,16 +1,16 @@
 //creazione delle rotte (CRUD)
-
 const express = require('express')
 const router = express.Router()
 
 // index
  router.get('/', (req, res) => {
-    resizeTo.send('lista dei post')
+    res.send('lista dei post')
 
  })
 
 // show
 router.get ('/:id', (req, re) => {
+   const id = req.params.id
     res.send(`Dettagli del post ${id}`)
 })
 
@@ -21,15 +21,22 @@ router.get ('/:id', (req, re) => {
 
 //update
 router.put('/:id', (req,res) => {
-    res.send(`Aggiornamento del post ${id}`)
+    res.send(`modifica TOTALE del post ${id}`)
 
+
+})
+//modify
+router.patch('./:id', (req,res)=>{
+  const id = req.params.id
+  res.send (`modifica PARZIALE del post ${id}`)
 
 })
 
 //delete
  router.delete('/:id',(req,res) => {
+    const id = req.params.id
     res.send(`Cancellazione del post ${id}`)
  })
 
- module.export = router
+ module.exports = router
  
